@@ -1,1 +1,23 @@
+.titulo {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
+.construtor .board {
+  top: 20px;
+  border: 3px solid #cbd9e8;
+  padding-top: 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.repet {
+  margin-left: 180px;
+}
+
+.construtor .board .dot {
+  height: 8px;
+  width: 8px;
+  background-color: #95a5c4;
+  border-radius: 50%;
+  display: inline-block;
+}
