@@ -10,8 +10,12 @@ function logar(email) {
 
 
 function getFacts(document) {
-    axios
-        .get('https://cat-fact.herokuapp.com/facts')
+    var animalType = document.getElementById("animalType");
+    var number = document.getElementById("number");
+
+    if (validateAnimalType(animalType) && validadeNumber(number)){
+        axios
+        .get('https://cat-fact.herokuapp.com/facts/random?animalType='+animalType+'&amount='+number) 
         .then(function (res) {
             var docs = res.data;
             for (var i = 0; i < docs.length; i++) {
@@ -24,4 +28,15 @@ function getFacts(document) {
         .catch(function (error){
             console.log(error);
         });
+
+    }
+}
+
+
+function validateAnimalType(animalType){
+    return animalType ? true : false;
+}
+
+function validadeNumber(number){
+    return number > 0 ? true: false;
 }
