@@ -1,11 +1,25 @@
-body {
+html {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(/patinhas.png) ;
+}
+body {
+  background-image: url(/projetoWeb2/img/CAT.jpeg);
   background-repeat: repeat;
-  
 }
 
 .cabecalho {
-  height: 80px;
+  height: 90px;
   width: 100%;
+}
+.img-head {
+  height: 70px;
+  width: 50px;
+  margin-left: 200px;
+  margin-top: 16px;
+}
+.link-head {
+  font-size: 40px;
+  color: black;
+  font-weight: 500;
+  margin-left: 20px;
+  padding-top: 36px;
 }

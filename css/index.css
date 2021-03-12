@@ -1,0 +1,31 @@
+.btn {
+  text-align: center;
+  height: 40px;
+  width: 400px;
+  font-weight: 600;
+  border: 2px solid #95a5c4;
+  background-color: #fff;
+  margin: 10px;
+  font-size: 17spx;
+  text-transform: uppercase;
+}
+.btn:hover {
+  border: 2px solid #e75d6f;
+}
+
+.botoes {
+  text-align: center;
+  margin-top: 560px;
+}
+
+.selectPet {
+  float: right;
+  margin-right: 200px;
+  margin-top: 60px;
+  background-color: #fff;
+  border: 2px solid #95a5c4;
+}
+
+.selectPet:hover {
+  border: 2px solid #e75d6f;
+}
