@@ -6,7 +6,7 @@
   border: 2px solid #95a5c4;
   background-color: #fff;
   margin: 10px;
-  font-size: 17spx;
+  font-size: 17px;
   text-transform: uppercase;
 }
 .btn:hover {
@@ -15,5 +15,11 @@
 
 .botoes {
   text-align: center;
-  margin-top: 380px;
+  /* margin-top: 380px; */
+}
+
+.img-pets{
+  text-align: center;
+  margin-top: 52px;
+  margin-bottom: 52px;
 }

@@ -1,6 +1,8 @@
 .titulo {
   text-align: center;
   margin-top: 40px;
+  background-color: #dbedfb;
+  height: 60px;
 }
 
 .construtor .board {
@@ -10,8 +12,8 @@
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   background-color: #fff;
-  margin: 40px;
-  margin-top: 80px;
+  margin-left: 180px;
+  margin-bottom: 90px;
   min-height: 200px;
   width: 400px;
 }
@@ -35,8 +37,9 @@
   font-weight: 600;
   border: 2px solid #95a5c4;
   background-color: #fff;
-  font-size: 17spx;
+  font-size: 17px;
   text-transform: uppercase;
+  margin: 40px;
 }
 
 .btn:hover {
@@ -56,3 +59,4 @@
   margin-left: 200px;
   margin-top: -86 px;
 }
+

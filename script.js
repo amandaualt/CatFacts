@@ -1,7 +1,6 @@
 function logar(email) {
     var parse_email = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (email) {
-        console.log('Não vazio')
         if (parse_email.test(email)) {
             window.location.href = "facts.html"
         }
@@ -19,8 +18,6 @@ function getFacts() {
     function onData(index) {
         return (result) => {
             var docs = result.data;
-            console.log(index, docs.text)
-            console.log(pElements, pElements[index])
             pElements[index].textContent = docs.text
         }
     }
