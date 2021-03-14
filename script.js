@@ -8,35 +8,67 @@ function logar(email) {
     }
 }
 
+var pElements = [];
 
-function getFacts(document) {
+cardFacts();
+
+function getFacts() {
     var animalType = document.getElementById("animalType");
-    var number = document.getElementById("number");
+    var valueT = animalType.options[animalType.selectedIndex].value;
 
-    if (validateAnimalType(animalType) && validadeNumber(number)){
-        axios
-        .get('https://cat-fact.herokuapp.com/facts/random?animalType='+animalType+'&amount='+number) 
-        .then(function (res) {
-            var docs = res.data;
-            for (var i = 0; i < docs.length; i++) {
-                console.log(docs[i].text)
-                // aqui vai o código que adiciona na tela
-                //para pegar os fatos, utilize: 
-                //document.elemento = docs[i].text;
-            }
-        })
-        .catch(function (error){
+    function onData(index) {
+        return (result) => {
+            var docs = result.data;
+            console.log(index, docs.text)
+            console.log(pElements, pElements[index])
+            pElements[index].textContent = docs.text
+        }
+    }
+
+    for(var i = 0; i < pElements.length; i++){
+        if (validateAnimalType(valueT)){
+            console.log('https://cat-fact.herokuapp.com/facts/random?animalType='+valueT)
+            axios.get('https://cat-fact.herokuapp.com/facts/random?animalType='+valueT)
+                .then(onData(i))
+                .catch(function (error){
+                    console.log(error);
+                });
+        }
+    }
+
+}
+
+getFacts();
+
+function cardFacts() {
+    for(var i =0; i < 4; i++){
+        try{
+            const divConstru = document.querySelector('.construtor');
+            const divCard = document.createElement('div');
+            const spanDot1 = document.createElement('span');
+            const spanDot2 = document.createElement('span');
+            const spanDot3 = document.createElement('span');
+            let pFact = document.createElement('p');
+        
+            divCard.className = 'board';
+            spanDot1.className = 'dot';
+            spanDot2.className = 'dot';
+            spanDot3.className = 'dot';
+            pFact.className = 'pFacts';
+            pElements.push(pFact);
+
+            divConstru.appendChild(divCard);
+            divCard.appendChild(spanDot1);
+            divCard.appendChild(spanDot2);
+            divCard.appendChild(spanDot3);
+            divCard.appendChild(pFact);
+        } catch(error){
             console.log(error);
-        });
-
+        }
     }
 }
 
 
 function validateAnimalType(animalType){
     return animalType ? true : false;
-}
-
-function validadeNumber(number){
-    return number > 0 ? true: false;
 }

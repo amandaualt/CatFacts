@@ -1,63 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/facts.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/facts.css" />
+    <!-- <script type="text/javascript" src="script.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <script type="text/javascript" src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Fatos sobre Gatos</title>
+  </head>
 
-  <title>Fatos sobre Gatos</title>
-</head>
+  <body>
+    <header class="cabecalho">
+      <!-- <div>
+      <a href="index.html"
+        ><img class="img-head" src="/projetoWeb2/img/cat.jpg" />
+      </a>
+      <a href="index.html" class="link-head">PetsFacts</a>
+      </div> -->
+      <select
+        class="selectPet custom-select custom-select-md mb-3 col-sm-2"
+        id="animalType"
+        onchange="getFacts()"
+      >
+        <option value="cat" selected>Gatos</option>
+        <option value="dog">Cachorros</option>
+        <option value="horse">Cavalos</option>
+        <option value="snail">Caracois</option>
+      </select>
+    </header>
+    <!-- <div class="conteudoBody"> -->
+    <h1 class="titulo col-12">Fatos Sobre Gatos</h1>
 
-<body onload="getFacts(document)">
-  <header class="cabecalho"></header>
-  <h1 class="titulo">Fatos Sobre Gatos</h1>
-  <div class="container">
-    <div class="construtor row">
-      <div class="board col-5">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <p>
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos.
-        </p>
-      </div>
-      <div class="board repet col-5">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <p>
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos, Fatos sobre os gatos, Fatos sobre os gatos,
-          Fatos sobre os gatos.
-        </p>
-      </div>
-    </div>
-  </div>
-  <footer></footer>
+    <a href="facts.html"
+      ><button type="button" class="btn refreshF">Atualizar Fatos</button></a
+    >
+    <div class="construtor row"></div>
+    <!-- </div> -->
+    <footer></footer>
 
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

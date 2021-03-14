@@ -15,17 +15,5 @@
 
 .botoes {
   text-align: center;
-  margin-top: 560px;
-}
-
-.selectPet {
-  float: right;
-  margin-right: 200px;
-  margin-top: 60px;
-  background-color: #fff;
-  border: 2px solid #95a5c4;
-}
-
-.selectPet:hover {
-  border: 2px solid #e75d6f;
+  margin-top: 380px;
 }
