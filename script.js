@@ -34,9 +34,19 @@ function getFacts(document) {
 
 
 function validateAnimalType(animalType){
-    return animalType ? true : false;
+    if(animalType.value){
+        return true;
+    } else {
+        animalType.className = "red"
+        return false;
+    }
 }
 
 function validadeNumber(number){
-    return number > 0 ? true: false;
+    if (number.value){
+        return true;
+    } else {
+        number.className = "red";
+        return false;
+    }
 }
