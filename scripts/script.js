@@ -9,10 +9,8 @@ function logar(email) {
 
 var pElements = [];
 
-cardFacts();
-
 function getFacts() {
-    var animalType = document.getElementById("animalType");
+    var animalType = document().getElementById("animalType");
     var valueT = animalType.options[animalType.selectedIndex].value;
 
     function onData(index) {
@@ -35,17 +33,15 @@ function getFacts() {
 
 }
 
-getFacts();
-
 function cardFacts() {
     for(var i =0; i < 4; i++){
         try{
-            const divConstru = document.querySelector('.construtor');
-            const divCard = document.createElement('div');
-            const spanDot1 = document.createElement('span');
-            const spanDot2 = document.createElement('span');
-            const spanDot3 = document.createElement('span');
-            let pFact = document.createElement('p');
+            const divConstru = document().querySelector('.construtor');
+            const divCard = document().createElement('div');
+            const spanDot1 = document().createElement('span');
+            const spanDot2 = document().createElement('span');
+            const spanDot3 = document().createElement('span');
+            let pFact = document().createElement('p');
         
             divCard.className = 'board';
             spanDot1.className = 'dot';
@@ -74,7 +70,6 @@ function validateAnimalType(animalType){
         return false;
     }
 }
-<<<<<<< HEAD
 
 function validadeNumber(number){
     if (number.value){
@@ -84,5 +79,3 @@ function validadeNumber(number){
         return false;
     }
 }
-=======
->>>>>>> bde358fde3759a5720eec1c8035d0d59a77e1d57

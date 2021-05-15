@@ -1,0 +1,26 @@
+{
+  "name": "projetoweb2",
+  "version": "1.0.0",
+  "description": "Matheus Candido\r Amanda Nobre",
+  "main": "routes/route.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/nodemon/bin/nodemon.js /routes/route.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandaualt/projetoWeb2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amandaualt/projetoWeb2/issues"
+  },
+  "homepage": "https://github.com/amandaualt/projetoWeb2#readme"
+}
