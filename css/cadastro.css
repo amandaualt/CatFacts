@@ -7,7 +7,7 @@ a:link {
 a:hover {
   color: darkslateblue;
 }
-.linkCadastro {
+.teste {
   padding-bottom: 6px;
   margin-bottom: 6px;
   color: black;
@@ -30,8 +30,6 @@ a:hover {
 }
 .classBtn {
   text-align: center;
-  /* align-items: center; */
-  /* justify-items: center; */
 }
 .btn {
   margin-top: 6%;
@@ -53,6 +51,6 @@ a:hover {
 }
 @media only screen and (min-width: 1024px) {
   .centralize {
-    padding-top: 6%;
+    padding-top: 4%;
   }
 }
