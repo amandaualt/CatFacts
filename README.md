@@ -1,4 +1,4 @@
 # projetoWeb2
 
-Matheus Candido
-Amanda Nobre
+# Amanda Nobre
+# Matheus Candido
