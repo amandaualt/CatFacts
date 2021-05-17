@@ -10,6 +10,10 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/facts.css" />
 
@@ -21,13 +25,18 @@
 
   <body>
     <header class="cabecalho">
-      <div class="link-home">
-        <a href="index.html"
-          ><img class="img-head" src="/img/icons8-extremidade-de-gato-80.png" />
-        </a>
-        <a href="index.html" class="link-head">PetsFacts</a>
-      </div>
-      <select
+      <div>
+        <div class="link-home">
+          <a href="index.html"
+            ><img
+              class="img-head"
+              src="/img/icons8-extremidade-de-gato-80.png"
+            />
+          </a>
+          <a href="index.html" class="link-head">PetsFacts</a>
+        </div>
+        <h1 class="titulo">Fatos sobre animais</h1>
+        <!-- <select
         class="selectPet custom-select custom-select-md mb-3 col-sm-2"
         id="animalType"
         onchange="getFacts()"
@@ -36,10 +45,34 @@
         <option value="dog">Cachorros</option>
         <option value="horse">Cavalos</option>
         <option value="snail">Caracois</option>
-      </select>
+      </select> -->
+        <div class="mb-3">
+          <!-- <div class="input-group"> -->
+          <input
+            type="text"
+            id="animalType"
+            class="selectPet form-control mb-3 col-sm-2"
+            placeholder="Recipient's username"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <!-- <div class="input-group-append"> -->
+          <button
+            class="btn btn-outline-secondary button"
+            type="button"
+            id="button-addon2"
+          >
+            <!-- Button -->
+            <i class="fas fa-search"></i>
+          </button>
+          <!-- </div> -->
+        </div>
+        <!-- </div> -->
+      </div>
+      <!-- <input class="selectPet custom-select-md mb-3 col-sm-2" id="animalType" /> -->
     </header>
     <!-- <div class="conteudoBody"> -->
-    <h1 class="titulo col-12">Fatos Sobre Gatos</h1>
+    <!-- <h1 class="titulo col-12">Fatos Sobre Gatos</h1> -->
 
     <a href="facts.html"
       ><button type="button" class="btn refreshF">Atualizar Fatos</button></a

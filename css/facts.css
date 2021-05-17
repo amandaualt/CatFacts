@@ -1,8 +1,6 @@
 .titulo {
   text-align: center;
-  margin-top: 40px;
-  background-color: #dbedfb;
-  height: 60px;
+  margin-top: -54px;
 }
 
 .construtor .board {
@@ -40,6 +38,7 @@
   font-size: 17px;
   text-transform: uppercase;
   margin: 40px;
+  color: #95a5c4;
 }
 
 .btn:hover {
@@ -59,4 +58,26 @@
   margin-left: 200px;
   margin-top: -86 px;
 }
+.button {
+  margin-top: -48px;
+  background-color: #fff;
+  /* margin-left: 880px; */
+  color: #95a5c4;
+  margin-right: -266px;
+  float: right;
+  height: 39px;
+}
+.selectPet {
+  float: right;
+  margin-right: 135px;
+  margin-top: -48px;
+  background-color: #fff;
+  border: 2px solid #95a5c4;
+}
 
+.selectPet:hover,
+.button:hover {
+  border: 2px solid #e75d6f;
+  background-color: #fff;
+  color: #e75d6f;
+}
