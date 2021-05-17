@@ -12,10 +12,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/cadastro.css" />
     <script type="text/javascript" src="../scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Login - Fatos sobre Gatos</title>
+    <title>Cadasrto - Fatos sobre Gatos</title>
   </head>
 
   <body>
@@ -34,7 +34,16 @@
           <div class="card login" style="width: 18rem">
             <div class="card-body">
               <label for="exampleFormControlInput1" class="form-label nomeInput"
-                >Endereço de Email</label
+                >Nome:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                placeholder="Maria Lima"
+              />
+              <label for="exampleFormControlInput1" class="form-label nomeInput"
+                >Endereço de Email:</label
               >
               <input
                 type="email"
@@ -42,7 +51,7 @@
                 id="email"
                 placeholder="nome@exemplo.com"
               />
-              <label for="" class="form-label nomeInput">Senha</label>
+              <label for="" class="form-label nomeInput">Senha:</label>
               <input
                 type="password"
                 class="form-control"
@@ -55,13 +64,10 @@
                   class="btn btn-primary"
                   onclick="logar(document.getElementById('email').value)"
                 >
-                  Entrar
+                  Cadastrar-se
                 </button>
               </div>
-              <a class="linkCadastro" href="cadastro.html">Cadastrar-se</a>
-              <a class="linkRecuperarSenha" href="RecuperaSenha.html"
-                >Recuperar senha</a
-              >
+              <a class="teste" href="index.html">Voltar</a>
             </div>
           </div>
         </div>
