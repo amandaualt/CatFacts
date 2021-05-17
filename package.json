@@ -2,16 +2,25 @@
   "name": "projetoweb2",
   "version": "1.0.0",
   "description": "Matheus Candido\r Amanda Nobre",
-  "main": "routes/route.js",
+  "main": "src/index.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "js-sha512": "^0.8.0",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.6",
-    "nodemon": "^2.0.7"
+    "mongoose": "^5.12.9",
+    "nodemailer": "^6.6.0",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node node_modules/nodemon/bin/nodemon.js /routes/route.js"
+    "start": "node node_modules/nodemon/bin/nodemon.js /src/index.js"
   },
   "repository": {
     "type": "git",
