@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/cadastro.css" />
     <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/cadastro.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Cadasrto - Fatos sobre Gatos</title>
+    <title>Cadastro - Fatos sobre Gatos</title>
   </head>
 
   <body>
@@ -33,36 +34,46 @@
         <div class="board">
           <div class="card login" style="width: 18rem">
             <div class="card-body">
-              <label for="exampleFormControlInput1" class="form-label nomeInput"
-                >Nome:</label
-              >
+              <label id='nameL' for="exampleFormControlInput1" class="form-label nomeInput"
+                >Nome: *</label>
               <input
                 type="text"
                 class="form-control"
-                id="nome"
+                id="name"
                 placeholder="Maria Lima"
+                onkeydown="returnOriginal(this)"
               />
               <label for="exampleFormControlInput1" class="form-label nomeInput"
-                >Endereço de Email:</label
+                >Endereço de Email: *</label
               >
               <input
                 type="email"
                 class="form-control"
                 id="email"
                 placeholder="nome@exemplo.com"
+                onkeydown="returnOriginal(this)"
               />
-              <label for="" class="form-label nomeInput">Senha:</label>
+              <label for="" class="form-label nomeInput">Senha: *</label>
               <input
                 type="password"
                 class="form-control"
                 id="password"
                 placeholder="******"
+                onkeydown="returnOriginal(this)"
+              />
+              <label for="" class="form-label nomeInput">Confirmação de Senha: *</label>
+              <input
+                type="password"
+                class="form-control"
+                id="passwordConfirm"
+                placeholder="******"
+                onkeydown="returnOriginal(this)"
               />
               <div class="classBtn">
                 <button
                   type="button"
                   class="btn btn-primary"
-                  onclick="logar(document.getElementById('email').value)"
+                  onclick="validar()"
                 >
                   Cadastrar-se
                 </button>
