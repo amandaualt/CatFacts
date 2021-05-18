@@ -16,11 +16,11 @@ function isEmail(email) {
         (dominio.lastIndexOf(".") < dominio.length - 1)) {
         return true;
     }
+
+    alert('Formato inválido de email');
     return false;
 }
 function isPassword(password, passwordConfirm) {
-    const password = document.getElementById('password');
-    const passwordConfirm = document.getElementById('passwordConfirm');
 
     if ((!password.value) || (!passwordConfirm.value))
         return false;
@@ -32,31 +32,27 @@ function isPassword(password, passwordConfirm) {
 }
 
 function isValidValues(name, email, password, passwordConfirm) {
-    let isValid = true;
-
-    if (!isEmail(email)) {
-        isValid = false;
+    let isValidValues = true;
+    if (!isEmail(email.value)) {
         email.focus();
         email.className += ' red';
+        isValidValues = false;
     }
 
     if (!name.value) {
-        isValid = false;
         name.focus();
         name.className += ' red';
+        isValidValues = false;
     }
 
     if (!isPassword(password, passwordConfirm)) {
-        isValid = false;
         password.focus();
         password.className += ' red';
         passwordConfirm.focus();
         passwordConfirm.className += ' red';
+        isValidValues = false;
     }
-
-    alert('Campos marcados com * são obrigatórios!')
-
-    return isValid;
+    return isValidValues;
 }
 
 function returnOriginal(element) {
@@ -64,22 +60,22 @@ function returnOriginal(element) {
 }
 
 function register() {
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    let passwordConfirm = document.getElementById('passwordConfirm').value;
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    let passwordConfirm = document.getElementById('passwordConfirm');
 
     if (isValidValues(name, email, password, passwordConfirm)) {
-        axios.post('http://localhost:3000/auth/register', {
-            'name': name,
-            'email': email,
-            'password': password,
-        })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        $.post("http://localhost:3000/auth/register", {
+            name: name.value,
+            email: email.value,
+            password: password.value
+        }, (res) => {
+            console.log('callback')
+            console.log(res.token);
+            window.localStorage.setItem('token', res.token);
+        });
+    } else {
+        alert('Campos marcados com * são obrigatórios');
     }
 }
