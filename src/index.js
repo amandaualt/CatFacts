@@ -24,10 +24,25 @@ app.use((req, res, next) => {
     next()
 })
 
-app.get('/teste', async function (req, res) {
-    const user = await User.find({ "name": /oi/ });
-    res.send(user)
-})
+app.get('/', async function (req, res) {
+    res.render('view/index.html');
+});
+
+app.get('/login', async function (req, res) {
+    res.render('view/login.html');
+});
+
+app.get('/RecuperaSenha', async function (req, res) {
+    res.render('view/RecuperaSenha.html');
+});
+
+app.get('/cadastro', async function (req, res) {
+    res.render('view/cadastro.html');
+});
+
+app.get('/fato', async function (req, res) {
+    res.render('view/facts.html');
+});
 
 require('./app/controllers/index')(app);
 
