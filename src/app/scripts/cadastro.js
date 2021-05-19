@@ -74,6 +74,8 @@ function register() {
             console.log('callback')
             console.log(res.token);
             window.localStorage.setItem('token', res.token);
+            window.localStorage.setItem('user', res.user);
+            window.location = 'facts.html'
         });
     } else {
         alert('Campos marcados com * são obrigatórios');
