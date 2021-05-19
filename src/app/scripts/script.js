@@ -35,8 +35,9 @@ function getFacts() {
     }
   }
 
-  $("#myModal").on("shown.bs.modal", function () {
-    $("#myInput").trigger("focus");
+  $('#myModa').on('shown.bs.modal', function () {
+    console.log('listener')
+    //$("#myInput").trigger("focus");
   });
 }
 
