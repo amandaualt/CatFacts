@@ -50,19 +50,6 @@ a:hover {
   font-weight: bold;
 }
 
-.red{
-  background-color: #faa5a5;
-  color: #495057;
-}
-
-.red:hover, .red:focus {
-  color:#fff;
-  background-color:#faa5a5;
-  border-color:#f88e8e;
-  outline:0;
-  -shadow:0 0 0 .2rem #f75d5d
-}
-
 @media only screen and (min-width: 1024px) {
   .centralize {
     padding-top: 4%;
