@@ -21,7 +21,6 @@ function getFacts() {
     };
   }
 
-<<<<<<< HEAD
   for (var i = 0; i < pElements.length; i++) {
     if (validateAnimalType(valueT)) {
       console.log(
@@ -33,17 +32,6 @@ function getFacts() {
         .catch(function (error) {
           console.log(error);
         });
-=======
-    for (var i = 0; i < pElements.length; i++) {
-        if (validateAnimalType(valueT)) {
-            console.log('https://cat-fact.herokuapp.com/facts/random?animalType=' + valueT)
-            axios.get('https://cat-fact.herokuapp.com/facts/random?animalType=' + valueT)
-                .then(onData(i))
-                .catch(function (error) {
-                    console.log(error);
-                });
-        }
->>>>>>> candido
     }
   }
 
@@ -54,21 +42,21 @@ function getFacts() {
 }
 
 function cardFacts() {
-<<<<<<< HEAD
   for (var i = 0; i < 4; i++) {
     try {
-      const divConstru = document().querySelector(".construtor");
-      const divCard = document().createElement("div");
-      const spanDot1 = document().createElement("span");
-      const spanDot2 = document().createElement("span");
-      const spanDot3 = document().createElement("span");
-      let pFact = document().createElement("p");
+      console.log('teste')
+      const divConstru = document().querySelector('.construtor');
+      const divCard = document().createElement('div');
+      const spanDot1 = document().createElement('span');
+      const spanDot2 = document().createElement('span');
+      const spanDot3 = document().createElement('span');
+      let pFact = document().createElement('p');
 
-      divCard.className = "board";
-      spanDot1.className = "dot";
-      spanDot2.className = "dot";
-      spanDot3.className = "dot";
-      pFact.className = "pFacts";
+      divCard.className = 'board';
+      spanDot1.className = 'dot';
+      spanDot2.className = 'dot';
+      spanDot3.className = 'dot';
+      pFact.className = 'pFacts';
       pElements.push(pFact);
 
       divConstru.appendChild(divCard);
@@ -78,42 +66,17 @@ function cardFacts() {
       divCard.appendChild(pFact);
     } catch (error) {
       console.log(error);
-=======
-    for (var i = 0; i < 4; i++) {
-        try {
-            const divConstru = document().querySelector('.construtor');
-            const divCard = document().createElement('div');
-            const spanDot1 = document().createElement('span');
-            const spanDot2 = document().createElement('span');
-            const spanDot3 = document().createElement('span');
-            let pFact = document().createElement('p');
-
-            divCard.className = 'board';
-            spanDot1.className = 'dot';
-            spanDot2.className = 'dot';
-            spanDot3.className = 'dot';
-            pFact.className = 'pFacts';
-            pElements.push(pFact);
-
-            divConstru.appendChild(divCard);
-            divCard.appendChild(spanDot1);
-            divCard.appendChild(spanDot2);
-            divCard.appendChild(spanDot3);
-            divCard.appendChild(pFact);
-        } catch (error) {
-            console.log(error);
-        }
->>>>>>> candido
     }
   }
 }
 
-<<<<<<< HEAD
+
+
 function validateAnimalType(animalType) {
   if (animalType.value) {
     return true;
   } else {
-    animalType.className = "red";
+    animalType.className = "red"
     return false;
   }
 }
@@ -125,23 +88,4 @@ function validadeNumber(number) {
     number.className = "red";
     return false;
   }
-=======
-
-function validateAnimalType(animalType) {
-    if (animalType.value) {
-        return true;
-    } else {
-        animalType.className = "red"
-        return false;
-    }
-}
-
-function validadeNumber(number) {
-    if (number.value) {
-        return true;
-    } else {
-        number.className = "red";
-        return false;
-    }
->>>>>>> candido
 }
