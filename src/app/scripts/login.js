@@ -7,10 +7,9 @@ function login() {
             email: email.value,
             password: password.value
         }, (res) => {
-            console.log(res.token);
             window.localStorage.setItem('token', res.token);
-            window.localStorage.setItem('user', res.user);
-            redirect('fato')
+            window.localStorage.setItem('user', res.user.email);
+            window.location = '/fato'
         });
     }
 }
@@ -26,6 +25,7 @@ function validateValues(email, password) {
         isValid = false;
         console.log('password falso')
     }
+
     console.log("isValid: " + isValid);
     return isValid;
 }

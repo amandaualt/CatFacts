@@ -3,7 +3,6 @@ function isValidValues(name, email, password, passwordConfirm) {
     if (!validator.isEmail(email, 'red')) {
         isValidValues = false;
     }
-    isValidValues = false;
 
 
     if (!validator.validate(name, 'red')) {
@@ -30,8 +29,8 @@ function register() {
         }, (res) => {
             console.log(res.token);
             window.localStorage.setItem('token', res.token);
-            window.localStorage.setItem('user', res.user);
-            redirect('fato')
+            window.localStorage.setItem('user', res.user.email);
+            redirect('/fato')
         });
     }
 }

@@ -1,3 +1,4 @@
+
 function isValidValues(animal, fact) {
   let isValidValues = true;
   if (!animal.value) {
@@ -17,6 +18,8 @@ function isValidValues(animal, fact) {
 function addFact() {
   let animal = document.getElementById("animal");
   let fact = document.getElementById("fact");
+  let user = window.localStorage.getItem("user");
+  console.log('User Id', user)
 
   if (isValidValues(animal, fact)) {
     $.post(
@@ -24,48 +27,37 @@ function addFact() {
       {
         animal: animal.value,
         fact: fact.value,
+        user: user,
       },
       (res) => {
-        window.localStorage.setItem("token", res.token);
-        window.location = "facts.html";
+        console.log('Response')
       }
     );
   }
 }
 
 function logout() {
-  (res) => {
-    delete window.sessionStorage.setItem("token", res.token);
-    delete window.sessionStorage.setItem("user", res.user);
-    redirect("fato");
-  };
+  localStorage.removeItem('token')
+  localStorage.removeItem('user')
+  redirect("/");
 }
 
-var pElements = [];
-
-cardFacts();
 
 function getFacts() {
-  var animalType = document.getElementById("animalType");
+  document.querySelector(".construtor").innerHTML = '';
+  const busca = document.getElementById("search").value
+  axios
+    .get("/facts/?busca=" + busca)
+    .then((res) => {
 
-  function onData(index) {
-    return (result) => {
-      var docs = result.data;
-      console.log(index, docs.text + "1");
-      console.log(pElements, pElements[index]);
-      pElements[index].textContent = docs.text;
-    };
-  }
-
-  for (var i = 0; i < pElements.length; i++) {
-    console.log("/facts/");
-    axios
-      .get("/facts/")
-      .then(onData(i))
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+      console.log(res.data)
+      for (var i = 0; i < res.data.length; i++) {
+        cardFacts(res.data[i].fact);
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
   $("#myModa").on("shown.bs.modal", function () {
     console.log("listener");
@@ -73,37 +65,35 @@ function getFacts() {
   });
 }
 
-getFacts();
-console.log(getFacts());
 
-function cardFacts() {
-  for (var i = 0; i < 4; i++) {
-    try {
-      const divConstru = document.querySelector(".construtor");
-      // console.log(divConstru);
-      const divCard = document.createElement("div");
-      const spanDot1 = document.createElement("span");
-      const spanDot2 = document.createElement("span");
-      const spanDot3 = document.createElement("span");
-      let pFact = document.createElement("p");
+function cardFacts(value) {
+  try {
+    const divConstru = document.querySelector(".construtor");
+    // console.log(divConstru);
+    const divCard = document.createElement("div");
+    const spanDot1 = document.createElement("span");
+    const spanDot2 = document.createElement("span");
+    const spanDot3 = document.createElement("span");
+    let pFact = document.createElement("p");
 
-      divCard.className = "board";
-      spanDot1.className = "dot";
-      spanDot2.className = "dot";
-      spanDot3.className = "dot";
-      pFact.className = "pFacts";
-      pElements.push(pFact);
+    divCard.className = "board";
+    spanDot1.className = "dot";
+    spanDot2.className = "dot";
+    spanDot3.className = "dot";
+    pFact.className = "pFacts";
+    console.log(value)
+    pFact.innerHTML = value;
 
-      divConstru.appendChild(divCard);
-      divCard.appendChild(spanDot1);
-      divCard.appendChild(spanDot2);
-      divCard.appendChild(spanDot3);
-      divCard.appendChild(pFact);
-      console.log(pFact);
-    } catch (error) {
-      console.log(error);
-    }
+    divConstru.appendChild(divCard);
+    divCard.appendChild(spanDot1);
+    divCard.appendChild(spanDot2);
+    divCard.appendChild(spanDot3);
+    divCard.appendChild(pFact);
+    console.log('pfact', pFact);
+  } catch (error) {
+    console.log(error);
   }
+
 }
 function validateAnimalType(animalType) {
   return animalType ? true : false;

@@ -39,7 +39,6 @@ const validator = {
             console.log('Emal ok')
             return true;
         }
-        console.log('fora do if');
         return false;
     },
     /**

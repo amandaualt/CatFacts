@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title>Login - Fatos sobre Gatos</title>
+  <title>Login - Fatos sobre Animais</title>
 </head>
 
 <body>
@@ -34,23 +34,20 @@
       <div class="board">
         <div class="card login" style="width: 18rem">
           <div class="card-body">
-            <form>
-              <label id="email" for="email" class="form-label nomeInput">Endereço de Email: *</label>
-              <input type="email" class="form-control" id="name" placeholder="nome@exemplo.com" required />
-              <div class="invalid-feedback">
-                Por favor verifique se o e-mail é valido.
-              </div>
-              <label id="password" for="password" class="form-label nomeInput">Senha: *</label>
+            <form class="needs-validation" novalidate>
+              <label for="email" class="form-label nomeInput">Endereço de Email: *</label>
+              <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" />
+              <label for="password" class="form-label nomeInput">Senha: *</label>
               <input type="password" class="form-control" id="password" placeholder="******" />
-              <div class="invalid-feedback">
-                Este campo não pode estar vazio.
-              </div>
-              <div class="classBtn">
-                <button type="submit" class="btn btn-primary" onclick="logar(document.getElementById('email').value)">
-                  Entrar
-                </button>
-              </div>
+
+
             </form>
+
+            <div class="classBtn">
+              <button type="submit" class="btn btn-primary" onclick="login()">
+                Entrar
+              </button>
+            </div>
             <a class="linkCadastro" href="cadastro">Cadastrar-se</a>
             <a class="linkRecuperarSenha" href="RecuperaSenha">Recuperar senha</a>
           </div>

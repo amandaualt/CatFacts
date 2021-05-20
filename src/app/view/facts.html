@@ -11,13 +11,12 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/facts.css" />
 
-  <script type="text/javascript" src="../scripts/facts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../scripts/facts.js"></script>
+  <script type="text/javascript" src="../scripts/validator.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
@@ -41,8 +40,8 @@
           <h1 class="titulo">Fatos sobre animais</h1>
         </div>
         <div class="col">
-          <input type="text" id="animalType" class="selectPet form-control col-8" placeholder="buscar"
-            aria-label="buscar" aria-describedby="button-addon2" />
+          <input type="text" id="search" class="selectPet form-control col-8" placeholder="buscar" aria-label="buscar"
+            aria-describedby="button-addon2" />
           <button class="btn button" type="submit" id="button-addon2">
             <i class="fas fa-search"></i>
           </button>
@@ -57,7 +56,6 @@
   </header>
 
   <div class="btnsFacts container ">
-    <a class="btn refreshF" href="fato" type="button">Atualizar Fatos</a>
     <button type="button" class="btn btnModal" data-toggle="modal" data-target="#exampleModal">Novo Fato</button>
     <button class="btn" style="float: right;" id="animalType" onclick="getFacts()">Mostrar Fatos</button>
   </div>
@@ -96,8 +94,8 @@
                   margin-top: 0px;
                   margin-right: 28px;
                   margin-left: 0px;" onclick="addFact()">Salvar Fato</button>
-            </div>
-          </form>
+            </div </form>
+            >
         </div>
       </div>
     </div>
