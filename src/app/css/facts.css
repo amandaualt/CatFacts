@@ -1,9 +1,9 @@
 .titulo {
+  margin-top: 20px;
   text-align: center;
-  margin-top: -48px;
 }
 
-.construtor .board {
+.construtor {
   top: 20px;
   border: 3px solid #cbd9e8;
   padding-top: 10px;
@@ -63,18 +63,21 @@
   margin-left: 10px;
 }
 .button {
-  margin-top: -48px;
+  /* margin-top: -48px; */
   background-color: #fff;
   /* margin-left: 880px; */
   color: #95a5c4;
   margin-right: -266px;
   float: right;
   height: 39px;
+  margin-right: 233px;
+  margin-top: -39px;
 }
 .selectPet {
   float: right;
-  margin-right: 135px;
-  margin-top: -48px;
+  /* margin-right: 135px; */
+  /* margin-top: -48px; */
+  margin-top: 26px;
   background-color: #fff;
   border: 2px solid #95a5c4;
 }
