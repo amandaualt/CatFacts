@@ -27,17 +27,6 @@ const validator = {
 
         let usuario = email.value.substring(0, email.value.indexOf("@"));
         let dominio = email.value.substring(email.value.indexOf("@") + 1, email.length);
-        console.log('usuario ', usuario);
-        console.log('dominio ', dominio);
-        console.log('usuario.length ', usuario.length);
-        console.log('dominio.length  ', dominio.length);
-        console.log('usuario.search("@") ', usuario.search("@"));
-        console.log('dominio.search("@") ', dominio.search("@"));
-        console.log('usuario.search(" ") ', usuario.search(" "));
-        console.log('dominio.search(" ") ', dominio.search(" "));
-        console.log('dominio.search(".") ', dominio.search("."));
-        console.log('dominio.indexOf(".") ', dominio.indexOf("."));
-        console.log('dominio.lastIndexOf(".") ', dominio.lastIndexOf("."));
         if ((usuario.length >= 1) &&
             (dominio.length >= 3) &&
             (usuario.search("@") == -1) &&

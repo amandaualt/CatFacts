@@ -1,11 +1,8 @@
-
-
 function login() {
     let email = document.getElementById('email');
     let password = document.getElementById('password');
 
     if (validateValues(email, password)) {
-        console.log('teste 2')
         $.post("http://localhost:3000/auth/login", {
             email: email.value,
             password: password.value

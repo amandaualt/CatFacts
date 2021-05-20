@@ -16,8 +16,6 @@ function isValidValues(name, email, password, passwordConfirm) {
 
     return isValidValues;
 }
-
-
 function register() {
     let name = document.getElementById('name');
     let email = document.getElementById('email');

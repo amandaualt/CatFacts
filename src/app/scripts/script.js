@@ -20,12 +20,12 @@ function getFacts() {
         }
     }
 
-    for(var i = 0; i < pElements.length; i++){
-        if (validateAnimalType(valueT)){
-            console.log('https://cat-fact.herokuapp.com/facts/random?animalType='+valueT)
-            axios.get('https://cat-fact.herokuapp.com/facts/random?animalType='+valueT)
+    for (var i = 0; i < pElements.length; i++) {
+        if (validateAnimalType(valueT)) {
+            console.log('https://cat-fact.herokuapp.com/facts/random?animalType=' + valueT)
+            axios.get('https://cat-fact.herokuapp.com/facts/random?animalType=' + valueT)
                 .then(onData(i))
-                .catch(function (error){
+                .catch(function (error) {
                     console.log(error);
                 });
         }
@@ -34,15 +34,15 @@ function getFacts() {
 }
 
 function cardFacts() {
-    for(var i =0; i < 4; i++){
-        try{
+    for (var i = 0; i < 4; i++) {
+        try {
             const divConstru = document().querySelector('.construtor');
             const divCard = document().createElement('div');
             const spanDot1 = document().createElement('span');
             const spanDot2 = document().createElement('span');
             const spanDot3 = document().createElement('span');
             let pFact = document().createElement('p');
-        
+
             divCard.className = 'board';
             spanDot1.className = 'dot';
             spanDot2.className = 'dot';
@@ -55,15 +55,15 @@ function cardFacts() {
             divCard.appendChild(spanDot2);
             divCard.appendChild(spanDot3);
             divCard.appendChild(pFact);
-        } catch(error){
+        } catch (error) {
             console.log(error);
         }
     }
 }
 
 
-function validateAnimalType(animalType){
-    if(animalType.value){
+function validateAnimalType(animalType) {
+    if (animalType.value) {
         return true;
     } else {
         animalType.className = "red"
@@ -71,8 +71,8 @@ function validateAnimalType(animalType){
     }
 }
 
-function validadeNumber(number){
-    if (number.value){
+function validadeNumber(number) {
+    if (number.value) {
         return true;
     } else {
         number.className = "red";
