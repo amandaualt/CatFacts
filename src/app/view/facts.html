@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/facts.css" />
 
-  <!-- <script type="text/javascript" src="script.js"></script> -->
+  <script type="text/javascript" src="../scripts/facts.js"></script>
+  <script type="text/javascript" src="../scripts/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -25,7 +26,7 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 
-  <title>Fatos sobre Gatos</title>
+  <title>Fatos sobre Animais</title>
 </head>
 
 <body>
@@ -40,33 +41,78 @@
 
       <div class="mb-3">
         <input type="text" id="animalType" class="selectPet form-control mb-3 col-sm-2"
-          placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" />
-        <button class="btn btn-outline-secondary button" type="submit" id="button-addon2">
+          placeholder="buscar" aria-label="buscar" aria-describedby="button-addon2" />
+        <button class="btn button" type="submit" id="button-addon2">
           <i class="fas fa-search"></i>
         </button>
       </div>
   </header>
 
-
-  <a href="fato"><button type="button" class="btn refreshF">Atualizar Fatos</button></a>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Large
-    modal</button>
-
-
-  <div id='myModal' class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+  <div class="btnsFacts">
+  <a class="btn refreshF" href="fato" type="button">Atualizar Fatos</a>
+  <button type="button" class="btn btnModal" data-toggle="modal" data-target="#exampleModal" >Novo Fato</button>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
-        ...
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adicionar Fato</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="needs-validation" novalidate>
+            <div class="form-row">
+              <label for="animal" class="col-form-label" >Animal: * </label>
+                <input type="text" class="form-control" id="animal" placeholder="Ex: gato, cachorro, etc." required>
+                <div class="invalid-feedback">
+                  Esse campo não pode ser vazio!!
+                </div>
+                <label for="fact" class="col-form-label">Fato: *</label>
+              <textarea type="text" class="form-control" id="fact" placeholder="Ex: gatos tem hábitos noturno" required></textarea>
+                <div class="invalid-feedback">
+                  Esse campo não pode ser vazio!!
+               </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal" style=" margin-top: 0px;
+              margin-bottom: 0px;
+              margin-right: 160px;
+              margin-left: 0px;"
+              >Cancelar</button>
+              <button type="submit"class="btn" style=" 
+                  margin-bottom: 0px;
+                  margin-top: 0px;
+                  margin-right: 28px;
+                  margin-left: 0px;" onclick="addFact()">Salvar Fato</button>
+            </div>
+          </form>
       </div>
-    </div>
+    </div> 
   </div>
   <div class="construtor row"></div>
   <footer></footer>
-
-  <script src="../scripts/script.js">
-  </script>
-
+     <script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+<!-- 
+  <script src="../scripts/script.js"></script>
+  <script src="../scripts/facts.js"></script> -->
 </body>
 
 </html>

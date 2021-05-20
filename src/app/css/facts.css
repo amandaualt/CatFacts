@@ -1,6 +1,6 @@
 .titulo {
   text-align: center;
-  margin-top: -54px;
+  margin-top: -48px;
 }
 
 .construtor .board {
@@ -43,6 +43,7 @@
 
 .btn:hover {
   border: 2px solid #e75d6f;
+  color: #e75d6f;
 }
 
 #numberFacts input {
@@ -55,8 +56,11 @@
 }
 
 .refreshF {
-  margin-left: 200px;
-  margin-top: -86 px;
+  margin-left: 150px;
+  margin-right: 0;
+}
+.btnModal {
+  margin-left: 10px;
 }
 .button {
   margin-top: -48px;
@@ -80,4 +84,21 @@
   border: 2px solid #e75d6f;
   background-color: #fff;
   color: #e75d6f;
+}
+
+.modal-footer {
+  height: 80px;
+}
+.red {
+  background-color: #faa5a5;
+  color: #495057;
+}
+
+.red:hover,
+.red:focus {
+  color: #fff;
+  background-color: #faa5a5;
+  border-color: #f88e8e;
+  outline: 0;
+  -shadow: 0 0 0 0.2rem #f75d5d;
 }
