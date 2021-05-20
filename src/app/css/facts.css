@@ -36,7 +36,7 @@
   background-color: #fff;
   font-size: 17px;
   text-transform: uppercase;
-  margin: 40px;
+  margin-top: 40px;
   color: #95a5c4;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .refreshF {
-  margin-left: 150px;
+  /* margin-left: 150px; */
   margin-right: 0;
 }
 .btnModal {
@@ -67,8 +67,8 @@
   margin-right: -266px;
   float: right;
   height: 39px;
-  margin-right: 233px;
-  margin-top: -39px;
+  margin-right: 200px;
+  margin-top: -38px;
 }
 .selectPet {
   float: right;

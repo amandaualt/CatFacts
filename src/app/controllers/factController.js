@@ -7,6 +7,7 @@ router.get("/", async function (req, res) {
   const busca = req.query.busca,
     facts = await Fact.find({ fact: new RegExp(busca) });
   console.log(busca);
+
   res.send(facts);
 });
 
