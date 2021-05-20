@@ -42,6 +42,4 @@ app.get("/fato", async function (req, res) {
 
 require("./app/controllers/index")(app);
 
-app.listen(3000, function () {
-  console.log("CORS-ENABLE web service listening on port 3000");
-});
+app.listen(3000);
