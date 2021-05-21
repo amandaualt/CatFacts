@@ -39,10 +39,11 @@ body {
   color: #495057;
 }
 
-.red:hover, .red:focus {
+.red:hover,
+.red:focus {
   color: #fff;
   background-color: #faa5a5;
   border-color: #f88e8e;
   outline: 0;
-  -shadow: 0 0 0 .2rem #f75d5d
+  -shadow: 0 0 0 0.2rem #f75d5d;
 }

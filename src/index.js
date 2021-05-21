@@ -40,6 +40,12 @@ app.get("/fato", async function (req, res) {
   res.render("view/facts.html");
 });
 
+app.get("/recupera-senha", async function (req, res) {
+  res.render("view/tokenRecuperacao.html");
+});
+app.get("/nova-senha", async function (req, res) {
+  res.render("view/novaSenha.html");
+});
 require("./app/controllers/index")(app);
 
 //app.listen(process.env.PORT || 8080);
