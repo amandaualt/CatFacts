@@ -3,7 +3,7 @@ function login() {
     let password = document.getElementById('password');
 
     if (validateValues(email, password)) {
-        $.post("http://localhost:3000/auth/login", {
+        $.post("/auth/login", {
             email: email.value,
             password: password.value
         }, (res) => {
@@ -18,15 +18,12 @@ function validateValues(email, password) {
     let isValid = true;
     if (!validator.isEmail(email, 'red')) {
         isValid = false;
-        console.log('Email falso')
     }
 
     if (!validator.validate(password, 'red')) {
         isValid = false;
-        console.log('password falso')
     }
 
-    console.log("isValid: " + isValid);
     return isValid;
 }
 

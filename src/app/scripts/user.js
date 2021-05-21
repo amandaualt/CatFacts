@@ -22,12 +22,11 @@ function register() {
     let passwordConfirm = document.getElementById('passwordConfirm');
 
     if (isValidValues(name, email, password, passwordConfirm)) {
-        $.post("http://localhost:3000/auth/register", {
+        $.post("/auth/register", {
             name: name.value,
             email: email.value,
             password: password.value
         }, (res) => {
-            console.log(res.token);
             window.localStorage.setItem('token', res.token);
             window.localStorage.setItem('user', res.user.email);
             redirect('/fato')

@@ -1,6 +1,6 @@
 {
-    "host": "smtp.mailtrap.io",
-    "port": 2525,
-    "user": "9d64a892ae6e31",
-    "pass": "6508914128c870"
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "user": "contato.canstruct@gmail.com",
+    "pass": "hq21kpnyq"
 }

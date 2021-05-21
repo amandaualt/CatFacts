@@ -36,7 +36,6 @@ const validator = {
             (dominio.search(".") != -1) &&
             (dominio.indexOf(".") >= 1) &&
             (dominio.lastIndexOf(".") < dominio.length - 1)) {
-            console.log('Emal ok')
             return true;
         }
         return false;

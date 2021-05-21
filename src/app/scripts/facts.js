@@ -19,18 +19,16 @@ function addFact() {
   let animal = document.getElementById("animal");
   let fact = document.getElementById("fact");
   let user = window.localStorage.getItem("user");
-  console.log('User Id', user)
 
   if (isValidValues(animal, fact)) {
     $.post(
-      "http://localhost:3000/facts/newFact",
+      "/facts/newFact",
       {
         animal: animal.value,
         fact: fact.value,
         user: user,
       },
       (res) => {
-        console.log('Response')
       }
     );
   }
@@ -50,7 +48,6 @@ function getFacts() {
     .get("/facts/?busca=" + busca)
     .then((res) => {
 
-      console.log(res.data)
       for (var i = 0; i < res.data.length; i++) {
         cardFacts(res.data[i].fact);
       }
@@ -60,7 +57,6 @@ function getFacts() {
     });
 
   $("#myModa").on("shown.bs.modal", function () {
-    console.log("listener");
     //$("#myInput").trigger("focus");
   });
 }
@@ -69,7 +65,6 @@ function getFacts() {
 function cardFacts(value) {
   try {
     const divConstru = document.querySelector(".construtor");
-    // console.log(divConstru);
     const divCard = document.createElement("div");
     const spanDot1 = document.createElement("span");
     const spanDot2 = document.createElement("span");
@@ -81,7 +76,6 @@ function cardFacts(value) {
     spanDot2.className = "dot";
     spanDot3.className = "dot";
     pFact.className = "pFacts";
-    console.log(value)
     pFact.innerHTML = value;
 
     divConstru.appendChild(divCard);
@@ -89,7 +83,6 @@ function cardFacts(value) {
     divCard.appendChild(spanDot2);
     divCard.appendChild(spanDot3);
     divCard.appendChild(pFact);
-    console.log('pfact', pFact);
   } catch (error) {
     console.log(error);
   }

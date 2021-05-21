@@ -10,8 +10,10 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/recupera.css" />
-  <script type="text/javascript" src="../scripts/script.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="../scripts/validator.js"></script>
+  <script type="text/javascript" src="../scripts/forgotPassword.js"></script>
   <title>RecuperarSenha - Fatos sobre Gatos</title>
 </head>
 
@@ -33,11 +35,16 @@
           <div class="card-body">
             <label for="exampleFormControlInput1" class="form-label nomeInput">Digite o código recebido no
               e-mail.</label>
-            <input type="email" class="form-control" id="email" placeholder="456789" />
+            <input  class="form-control" id="token" placeholder="código" />
+
+            <label for="exampleFormControlInput1" class="form-label nomeInput">Nova senha:</label>
+            <input type="password" class="form-control" id="password" placeholder="********" />
+            <label for="exampleFormControlInput1" class="form-label nomeInput">Confirmar nova senha:</label>
+            <input type="password" class="form-control" id="passwordConfirm" placeholder="********" />
             <div class="classBtn">
-              <a type="button" class="btn" href="nova-senha">Continuar</a>
+              <a type="button" class="btn" onclick="sendPassword()">Confirmar</a>
             </div>
-            <a class="voltar" href="/">Voltar</a>
+            <a class="voltar" href="RecuperaSenha">Voltar</a>
           </div>
         </div>
       </div>

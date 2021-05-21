@@ -48,5 +48,4 @@ app.get("/nova-senha", async function (req, res) {
 });
 require("./app/controllers/index")(app);
 
-//app.listen(process.env.PORT || 8080);
-app.listen(3000);
+app.listen(process.env.PORT || 8080);

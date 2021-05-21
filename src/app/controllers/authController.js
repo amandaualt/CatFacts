@@ -16,7 +16,6 @@ function generateToken(params = {}) {
 router.post("/register", async (req, res) => {
   try {
     const { email } = req.body;
-    console.log(email + " " + req.body.password);
     if (await User.findOne({ email }))
       return res.status(400).send({ error: "This Email already exists!" });
 
@@ -35,7 +34,6 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    console.log('login')
     const { email, password } = req.body;
     const user = await User.findOne({ email }).select("+password");
     if (!user) return res.status(400).send({ error: "User not found!" });
@@ -103,6 +101,7 @@ router.post("/reset_password", async (req, res) => {
     );
 
     if (!user) return res.status(400).send({ error: "User not found!" });
+
 
     if (token !== user.passwordResetToken)
       return res.status(400).send({ error: "Token invalid" });
