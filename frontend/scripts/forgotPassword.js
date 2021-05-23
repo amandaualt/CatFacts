@@ -1,10 +1,10 @@
 function forgotPassword(email) {
-    axios.post('/auth/forgot_password', {
+    axios.post('https://animalfacts-1.herokuapp.com/auth/forgot_password', {
         "email": email,
     })
         .then(function (response) {
             window.localStorage.setItem("email", email)
-            window.location = 'recupera-senha'
+            redirect('tokenRecuperacao.html');
         })
         .catch(function (error) {
             console.log(error)
@@ -25,20 +25,20 @@ function sendPassword() {
     const email = window.localStorage.getItem('email')
 
 
-    if (validator.comparePasswords(password, passwordConfirm, 'red')) {
+    if (validator.comparePasswords(password, passwordConfirm, 'red') && validator.validate(token, 'red')) {
         resetPassword(password.value, token.value, email);
     }
 }
 
 function resetPassword(password, token, email) {
-    axios.post('/auth/reset_password', {
+    axios.post('https://animalfacts-1.herokuapp.com/auth/reset_password', {
         "password": password,
         "token": token,
         "email": email
     })
         .then(function (response) {
             window.localStorage.removeItem("email")
-            window.location = '/login'
+            redirect('login.html')
         })
         .catch(function (error) {
         });

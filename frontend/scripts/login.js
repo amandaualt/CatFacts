@@ -3,14 +3,18 @@ function login() {
     let password = document.getElementById('password');
 
     if (validateValues(email, password)) {
-        $.post("/auth/login", {
+
+        axios.post("https://animalfacts-1.herokuapp.com/auth/login", {
             email: email.value,
             password: password.value
-        }, (res) => {
-            window.localStorage.setItem('token', res.token);
-            window.localStorage.setItem('user', res.user.email);
-            window.location = '/fato'
+        }).then((res) => {
+            window.localStorage.setItem('token', res.data.token);
+            window.localStorage.setItem('user', res.data.user.email);
+            redirect('facts.html')
+        }).catch((err) => {
+            console.log(err)
         });
+
     }
 }
 

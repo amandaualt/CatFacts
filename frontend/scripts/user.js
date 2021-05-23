@@ -22,14 +22,16 @@ function register() {
     let passwordConfirm = document.getElementById('passwordConfirm');
 
     if (isValidValues(name, email, password, passwordConfirm)) {
-        $.post("/auth/register", {
+        axios.post("https://animalfacts-1.herokuapp.com/auth/register", {
             name: name.value,
             email: email.value,
             password: password.value
         }, (res) => {
             window.localStorage.setItem('token', res.token);
             window.localStorage.setItem('user', res.user.email);
-            redirect('/fato')
+            redirect('facts.html');
+        }).catch((err) => {
+
         });
     }
 }

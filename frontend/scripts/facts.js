@@ -21,31 +21,32 @@ function addFact() {
   let user = window.localStorage.getItem("user");
 
   if (isValidValues(animal, fact)) {
-    $.post(
-      "/facts/newFact",
-      {
-        animal: animal.value,
-        fact: fact.value,
-        user: user,
-      },
-      (res) => {
-      }
-    );
+    axios.post("https://animalfacts-1.herokuapp.com/facts/newFact", {
+      animal: animal.value,
+      fact: fact.value,
+      user: user,
+    }).
+      then((response) => {
+
+      })
+      .catch((err) => {
+
+      })
+
   }
 }
 
 function logout() {
   localStorage.removeItem('token')
   localStorage.removeItem('user')
-  redirect("/");
+  redirect("index.html");
 }
 
 
 function getFacts() {
   document.querySelector(".construtor").innerHTML = '';
   const busca = document.getElementById("search").value
-  axios
-    .get("/facts/?busca=" + busca)
+  axios.get("https://animalfacts-1.herokuapp.com/facts/?busca=" + busca)
     .then((res) => {
 
       for (var i = 0; i < res.data.length; i++) {
@@ -53,6 +54,7 @@ function getFacts() {
       }
     })
     .catch(function (error) {
+      console.log('erro')
       console.log(error);
     });
 

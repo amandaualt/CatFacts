@@ -10,10 +10,7 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/recupera.css" />
-  
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="../scripts/validator.js"></script>
-  <script type="text/javascript" src="../scripts/forgotPassword.js"></script>
   <title>RecuperarSenha - Fatos sobre Gatos</title>
 </head>
 
@@ -22,8 +19,8 @@
     <div class="container">
       <div class="row">
         <div class="col link-home ">
-          <a href="/"><img class="img-head" src="/img/icons8-extremidade-de-gato-80.png" /></a>
-          <a href="/" class="link-head">PetsFacts</a>
+          <a href="index.html"><img class="img-head" src="../img/icons8-extremidade-de-gato-80.png" /></a>
+          <a href="index.html" class="link-head">PetsFacts</a>
         </div>
       </div>
   </header>
@@ -33,18 +30,14 @@
       <div class="board">
         <div class="card login" style="width: 18rem">
           <div class="card-body">
-            <label for="exampleFormControlInput1" class="form-label nomeInput">Digite o código recebido no
-              e-mail.</label>
-            <input  class="form-control" id="token" placeholder="código" />
-
             <label for="exampleFormControlInput1" class="form-label nomeInput">Nova senha:</label>
-            <input type="password" class="form-control" id="password" placeholder="********" />
+            <input type="password" class="form-control" id="senhaNova" placeholder="********" />
             <label for="exampleFormControlInput1" class="form-label nomeInput">Confirmar nova senha:</label>
-            <input type="password" class="form-control" id="passwordConfirm" placeholder="********" />
+            <input type="password" class="form-control" id="novaSenhaConfirma" placeholder="********" />
             <div class="classBtn">
-              <a type="button" class="btn" onclick="sendPassword()">Confirmar</a>
+              <a type="button" class="btn" href="index.html">Continuar</a>
             </div>
-            <a class="voltar" href="RecuperaSenha">Voltar</a>
+            <a class="voltar" href="index.html">Voltar</a>
           </div>
         </div>
       </div>
